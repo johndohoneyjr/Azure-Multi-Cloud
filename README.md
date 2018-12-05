@@ -16,12 +16,8 @@ ARM_CLIENT_ID=xxx
 
 ````
 
-Be sure to double check the value of env, for a command line, use OSS.  For TFE, use TFE.
-
 ### Step to execute
-
-* Make sure your env is set to OSS or TFE
-* Be sure to define your SSH PEM key or its value
+* Besure to change the Admin password if you intend on logging into the instance
 * terraform init
 * terraform plan
 * terraform apply

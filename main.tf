@@ -48,6 +48,7 @@ resource "azurerm_network_interface" "ni" {
     }
 }
 
+#
 # create virtual machine
 resource "azurerm_virtual_machine" "vm" {
     name = "${var.vmscaleset_name}"
@@ -76,19 +77,14 @@ resource "azurerm_virtual_machine" "vm" {
     }
 
     os_profile_linux_config {
-      disable_password_authentication = true
-
-      ssh_keys {
-        path     = "/home/${var.admin_username}/.ssh/authorized_keys"
-        key_data = "${var.env == "OSS" ? var.ssh_key : var.ssh_key_value}"
-      }
+      disable_password_authentication = false 
     }
 
     connection {
         type        = "ssh"
         host        = "${azurerm_public_ip.myip.ip_address}"
-        user        = "ubuntu"
-        private_key = "${var.env == "OSS" ? var.ssh_key : var.ssh_key_value}"
+        user        = "${var.admin_username}"
+        password    = "${var.admin_password}"
         timeout     = "20s"
       }
 
