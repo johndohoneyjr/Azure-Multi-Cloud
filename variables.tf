@@ -1,3 +1,24 @@
+# The following 4 variable are for authentication
+
+variable "subscription_id" {
+  default= ""
+}
+
+variable "tenant_id" {
+  default= ""
+}
+
+variable "client_id" {
+  default= ""
+}
+
+variable "client_secret" {
+  default= ""
+}
+
+
+
+
 variable "rg_prefix" {
   description = "The shortened abbreviation to represent your resource group that will go on the front of some resources."
   default     = "rg"
