@@ -33,7 +33,7 @@ resource "azurerm_public_ip" "myip" {
   allocation_method            = "Static"
   domain_name_label            = "${azurerm_resource_group.vmss.name}"
 
-  tags {
+  tags = {
     environment = "staging"
   }
 }
