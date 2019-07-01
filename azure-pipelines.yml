@@ -28,8 +28,8 @@ steps:
   inputs:
     targetType: inline
     script: 'echo $ATLAS_TOKEN;
-    export FOO=1234;
+    export FOO="ws-1234";
     echo $FOO;
-    whoami
+    ls -la
     '
 
