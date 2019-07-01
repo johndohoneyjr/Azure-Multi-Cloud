@@ -24,13 +24,8 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-- task: InvokeRESTAPI@1
+- task: Bash@3
   inputs:
-    connectionType: 'Generic' 
-    #serviceConnection: # Required when connectionType == ConnectedServiceName
-    method: 'POST'
-    #headers: '{"Content-Type": "application/json",  "Authorization": "$(system.AccessToken)"}' 
-    #body: # Required when method != GET && Method != HEAD
-    #urlSuffix: # Optional
-    waitForCompletion: 'true' 
-    #successCriteria: # Optional
+    targetType: inline
+    script: 'echo values in this script'
+
