@@ -10,18 +10,18 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  address: app.terraform.io
-  organization: johndohoneyjr
-  workspace: workspace-from-api
+  URL: app.terraform.io
+  ORGANIZATION: johndohoneyjr
+  WORKSPACE: workspace-from-api
   ATLAS_TOKEN: 123455
 
 steps:
-- script: echo Hello, world! $ATLAS_TOKEN
+- script: echo Hello, world! $ORGANIZATION
   displayName: 'Run a one-line script'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
+    echo See https://$URL
   displayName: 'Run a multi-line script'
 
 - task: Bash@3
