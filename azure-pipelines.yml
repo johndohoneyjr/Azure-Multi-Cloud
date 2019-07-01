@@ -26,7 +26,7 @@ steps:
 
 - task: InvokeRESTAPI@1
   inputs:
-    connectionType: 'ConnectedServiceName' 
+    connectionType: 'Generic' 
     #serviceConnection: # Required when connectionType == ConnectedServiceName
     method: 'POST'
     #headers: '{"Content-Type": "application/json",  "Authorization": "$(system.AccessToken)"}' 
