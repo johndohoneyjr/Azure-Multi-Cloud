@@ -1,0 +1,36 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  address: app.terraform.io
+  organization: johndohoneyjr
+  workspace: workspace-from-api
+  ATLAS_TOKEN: 123455
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
+
+- task: InvokeRESTAPI@1
+  inputs:
+    connectionType: 'ConnectedServiceName' 
+    #serviceConnection: # Required when connectionType == ConnectedServiceName
+    method: 'POST'
+    #headers: '{"Content-Type": "application/json",  "Authorization": "$(system.AccessToken)"}' 
+    #body: # Required when method != GET && Method != HEAD
+    #urlSuffix: # Optional
+    waitForCompletion: 'true' 
+    #successCriteria: # Optional
