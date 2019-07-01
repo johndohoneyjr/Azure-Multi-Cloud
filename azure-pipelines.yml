@@ -30,6 +30,7 @@ steps:
     script: 'echo $ATLAS_TOKEN;
     export FOO="ws-1234";
     echo $FOO;
-    ls -la
+    ls -la;
+    pwd
     '
 
